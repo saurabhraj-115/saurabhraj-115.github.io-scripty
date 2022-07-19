@@ -1,60 +1,48 @@
 <html>
 	<head>
-<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-<title>Meet Saurabh</title>
-<
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+	<title>Scripty</title>
+
 
 		<style type="text/css">
-			body{font-family: 'libre serif'; }
-			p{display: inline-block;}
-			img{display: block;}
-			.container{width: 90%;position absolute;margin: auto;}
-			.title{position: relative;width: 90%;margin: auto;text-align: center;font-weight: bold;font-size: 54px;padding: 1%;}
-			.section{position: relative;width:100%;margin: auto;padding: 2%;}
-			.subsection{position: relative; width: 95%;text-align: justify;padding: 10px;}
-			.heading{position: relative; width: 95%;text-align: left;font-size: 25px;font-weight: bold;}
-			.text{width: 95%;font-size: 20px;text-align: justify;padding: 10px 0px 10px 0px;}
-			.authors{position: relative;width: 80%;margin: auto;padding: 2%;font-style: italic;text-align: center;font-size: 20px;}
-			.image{width: 95%;font-size: 20px;text-align: left;}
+			#ticket_form {
+				font-family: Verdana, Helvetica, sans-serif;
+				/* font-size: 10pt; */
+				color: dimgray;
+				width: 480px;
+				border: 1px solid lightgray;
+				padding: 0 8px;
+			}
+			form ul {
+				list-style-type: none;
+				padding-left: 0;
+			}
+			form li {
+				margin: 0 0 6px 0;
+			}
+			.field {
+				width: 70%;
+			}
+
 		</style>
+
+
 	</head>
+
 	<body>
+		<div id="ticket_form">
 		<div class="container">
-			<div class="title">Saurabh's Scripty. ETA 31st August, 2022</div>
+			<div class="title">Saurabh's Scripty.</div>
 
-			<!-- <div class="authors"> -->
-
-				<!-- Start edit here  -->
-				<!-- <p>Sharma Harsh, Roll No.: 150121042, Branch: EP</p>; &nbsp; &nbsp; <br>
-				<p>Saurabh Raj, Roll No.: 150121040, Branch: Ep</p>; &nbsp; &nbsp; -->
-
-
-				<!-- Stop edit here -->
-
-			<!-- </div> -->
-
-
-			<!-- <div class="section">
-				<div class="heading">Abstract</div>
-				<div class="text">
-
-				    There are a million emotions that exist around us in this world. Given that in future the interaction of man and machine is going to be more and more robust it becomes ever more crucial for us to enable the machines understand the common emotions perceived by a normal human as closely as possible. There have been several attempts to do so in the past, namely, the analysis of Narrowband Spectrograms, Wideband Spectrograms etc. Inevitably each method left some error in correctly perceiving the emotions generated due to human glottal movement. Also in the process of choosing the location of  window either in frequency or time axis affects the preciseness of the emotion detected. In order to solve the listed difficulties, a new method was proposed that deals with narrowing down the window to almost an impulse like approximation in time domain which is referred to as Zero Time Windowing. This enables to finally reach a better quality of the signals reproduced for the machine to study from and analyse. The raw data is then processed by a learning algorithm which hence finally classify any emotion that it might come across in future. <br> <br>
-            <I><B> Keywords:</B>  Zero-time windowing; Zero-frequency filtering; Group delay function; NGD spectrum; HNGD spectrum</I>
-
-
-
-				</div>
-			</div> -->
-
-			<!-- <div class="section">
-				<div class="heading">1. Introduction</div>
-				<div class="text">
-
-					One of the most active research areas in speech processing is recognizing emotion from speech. It is one of the most widely researched topics in areas of human-computer interaction (HCI). The emotions of a speech can be deciphered by using the sound signal as the main feature besides facial expression or gestures.
-
-				</div>
-
-
-		</div> -->
+			<form action="convert_script"  method="post">
+				<ul>
+				  <li><textarea placeholder="Enter Script"
+					name="script" rows="15" class="field" required></textarea></li>
+				
+				<li><input type="submit" value="Open LC"></li>
+				</ul>
+				</form>
+			
+			</div>
 	</body>
 </html>
