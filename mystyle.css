@@ -1,0 +1,18 @@
+#ticket_form {
+    font-family: Verdana, Helvetica, sans-serif;
+    /* font-size: 10pt; */
+    color: dimgray;
+    width: 480px;
+    border: 1px solid lightgray;
+    padding: 0 8px;
+}
+form ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+form li {
+    margin: 0 0 6px 0;
+}
+.field {
+    width: 70%;
+}
