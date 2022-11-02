@@ -17,8 +17,13 @@
 				</form>
 			</div>
 		</div>
-		<!-- Start of targaryenz Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=35e9a85a-2b03-49ca-907d-0216cb1748a7"> </script>
-<!-- End of targaryenz Zendesk Widget script -->
+		<script>
+			window.sprChatSettings = window.sprChatSettings || {};
+			window.sprChatSettings = {"appId":"6360d1b2f0e80a1d152da693_app_40478","skin":"MODERN"};
+		</script>
+		
+		<script>
+		(function(){var t=window,e=t.sprChat,a=e&&!!e.loaded,n=document,r=function(){r.m(arguments)};r.q=[],r.m=function(t){r.q.push(t)},t.sprChat=a?e:r;var o=function(){var e=n.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://prod12-live-chat.sprinklr.com/api/livechat/handshake/widget/"+t.sprChatSettings.appId,e.onerror=function(){t.sprChat.loaded=!1},e.onload=function(){t.sprChat.loaded=!0};var a=n.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)};"function"==typeof e?a?e("update",t.sprChatSettings):o():"loading"!==n.readyState?o():n.addEventListener("DOMContentLoaded",o)})()
+		</script>
 	</body>
 </html>
