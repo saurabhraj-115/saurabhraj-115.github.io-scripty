@@ -1,16 +1,25 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="mystyle.css" type="text/css">
-		<title>Scripty</title>
+		<title>Scripty_V2.0</title>
 		<script src="script.js"></script>
 	</head>
 
 	<body>
 		<div id="ticket_form">
 			<div class="container">
-				<div class="title">Saurabh's Scripty.</div>
+				<div class="title">Saurabh's Scripty Pro.</div>
 				<form>
 					<ul>
+						<li><label for="Environment">Choose an Environment:</label></li>
+						<li>
+						<select id="envir" name="envir">
+							<option value="prod3">Prod3</option>
+							<option value="prod12">Prod12</option>
+							<option value="qa4">QA4</option>
+							<option value="qa5">QA5</option>
+						</select>
+						</li>
 						<li><textarea placeholder="Enter Script" name="script" rows="15" class="field" required></textarea></li>
 						<li><input type="submit" value="Open LC" onclick="processScript(this.form)"></li>
 					</ul>
