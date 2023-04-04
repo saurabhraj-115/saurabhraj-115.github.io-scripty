@@ -1,76 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Scripty-GPT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-      body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #f8f9fa;
-      }
-      .container {
-        max-width: 800px;
-        margin-top: 50px;
-      }
-      .form-group label {
-        font-weight: bold;
-      }
-      .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-      }
-      .btn-primary:hover {
-        background-color: #0062cc;
-        border-color: #0062cc;
-      }
-      .btn-secondary {
-        background-color: #6c757d;
-        border-color: #6c757d;
-      }
-      .btn-secondary:hover {
-        background-color: #5a6268;
-        border-color: #545b62;
-      }
-      #consoleDiv {
-        margin-top: 20px;
-        display: none;
-        background-color: #ffffff;
-        border-radius: 5px;
-        border: 1px solid #d3d3d3;
-        padding: 10px;
-      }
-      #consoleOutput {
-        white-space: pre-wrap;
-        font-size: 14px;
-      }
-    </style>
+    <title>Code Editor Example</title>
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/theme/dracula.min.css">
   </head>
   <body>
     <div class="container">
-      <h1>Saurabh's Scripty : Version  :: Byakugan  </h1>
+      <h1>Saurabh's Scripty : Version :: Byakugan</h1>
       <form>
         <div class="form-group">
           <label for="jsCode">Enter JavaScript Code:</label>
-          <textarea class="form-control" id="jsCode" rows="10"></textarea>
+          <textarea class="form-control" id="jsCode"></textarea>
         </div>
         <button type="button" class="btn btn-primary" onclick="runCode()">Run Code</button>
-        <!-- <button type="button" class="btn btn-secondary" onclick="clearOutput()">Clear Output</button> -->
         <button type="button" class="btn btn-secondary" onclick="location.reload()">Refresh</button>
-		<br>
-		<a  href="https://www.linkedin.com/in/saurabhraj-ac/" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn </a>
-
+        <br>
+        <a href="https://www.linkedin.com/in/saurabhraj-ac/" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn</a>
       </form>
       <div id="consoleDiv">
         <h5>Console Output:</h5>
         <pre id="consoleOutput"></pre>
       </div>
     </div>
+
+    <!-- CodeMirror JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/javascript/javascript.min.js"></script>
     <!-- Bootstrap JavaScript and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@2.9.3/dist/umd/popper.min.js"></script>
@@ -78,33 +35,29 @@
     <!-- SweetAlert2 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
     <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("jsCode"), {
+        mode: "javascript",
+        lineNumbers: true,
+        theme: "dracula"
+      });
+
       function runCode() {
-        const jsCode = document.getElementById('jsCode').value;
+        const jsCode = editor.getValue();
         const codeWithoutScriptTags = jsCode.replace(/<script[^>]*>/g, '').replace(/<\/script>/g, '');
         try {
           const consoleOutput = eval(codeWithoutScriptTags);
           document.getElementById('consoleOutput').innerHTML = JSON.stringify(consoleOutput);
           document.getElementById('consoleDiv').style.display = 'none';
         } catch (error) {
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: error.toString()
-            });
-          }
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error.toString()
+          });
+        }
         //change background color
         document.body.style.backgroundColor = '#EDE2D3';
       }
-      
-//       function clearOutput() {
-//   document.getElementById('jsCode').value = '';
-//   document.getElementById('consoleOutput').innerHTML = '';
-//   document.getElementById('consoleDiv').style.display = 'none';
-//   document.body.style.backgroundColor = '#EDE2D3'; // set background color to light grey
-// }
-
     </script>
-
-
   </body>
 </html>
