@@ -42,22 +42,20 @@
       });
   
       function runCode() {
-        const jsCode = jsCodeTextarea.value;
-        const codeWithoutScriptTags = jsCode.replace(/<script[^>]*>/g, '').replace(/<\/script>/g, '');
-        try {
-          const consoleOutput = eval(codeWithoutScriptTags);
-          document.getElementById('consoleOutput').innerHTML = JSON.stringify(consoleOutput);
-          document.getElementById('consoleDiv').style.display = 'none';
-        } catch (error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: error.toString()
-          });
-        }
-        //change background color
-        document.body.style.backgroundColor = '#EDE2D3';
-      }
+  const jsCode = jsCodeTextarea.value;
+  const codeWithoutScriptTags = jsCode.replace(/<script[^>]*>/g, '').replace(/<\/script>/g, '');
+  try {
+    eval(codeWithoutScriptTags);
+  } catch (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: error.toString()
+    });
+  }
+  //change background color
+  document.body.style.backgroundColor = '#EDE2D3';
+}
     </script>
   </body>
   
